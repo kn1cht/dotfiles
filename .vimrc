@@ -23,6 +23,32 @@ set whichwrap=b,s,h,l,<,>,[,]
 autocmd BufWritePre * :%s/\s\+$//ge
 autocmd BufWritePre * :%s/\t/  /ge
 "---------------------------------------------------------------------------
+" history
+if !isdirectory(expand("~/.vim/backupdir/"))
+    silent !echo "Creating backup dir..."
+    silent !mkdir -p ~/.vim/backupdir
+endif
+if !isdirectory(expand("~/.vim/swap/"))
+    silent !echo "Creating swap dir..."
+    silent !mkdir -p ~/.vim/swap
+endif
+if !isdirectory(expand("~/.vim/undo/"))
+    silent !echo "Creating undo dir..."
+    silent !mkdir -p ~/.vim/undo
+endif
+set backupdir^=~/.vim/backup/
+set undodir^=~/.vim/undo/
+
+" 表示行単位で上下移動するように
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+
+" 逆に普通の行単位で移動したい時のために逆の map も設定しておく
+nnoremap gj j
+nnoremap gk k
+
 " Shift+hjklで移動量を大きく
 noremap H 3h
 noremap J 3j
