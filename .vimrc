@@ -22,6 +22,7 @@ set tabstop=4
 set whichwrap=b,s,h,l,<,>,[,]
 autocmd BufWritePre * :%s/\s\+$//ge
 autocmd BufWritePre * :%s/\t/  /ge
+
 "---------------------------------------------------------------------------
 " history
 if !isdirectory(expand("~/.vim/backupdir/"))
@@ -54,6 +55,14 @@ noremap H 3h
 noremap J 3j
 noremap K 3k
 noremap L 3l
+
+" F5キーでコンパイル
+command! C call s:C()
+nmap <F5> :C<CR>
+function! s:C()
+    :w
+    :!g++ --std=c++11 -O2 -Wall % -o X
+:endfunction
 "---------------------------------------------------------------------------
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
