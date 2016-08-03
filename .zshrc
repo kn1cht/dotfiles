@@ -28,7 +28,8 @@ setopt hist_reduce_blanks
 setopt extended_glob
 
 alias vv="g++ --std=c++11 -O2 -Wall"
-alias ls='ls -G'
+alias ls='ls -Ga'
+alias sl='ls'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
 # C で標準出力をクリップボードにコピーする

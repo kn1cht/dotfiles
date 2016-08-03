@@ -1,5 +1,5 @@
-colorscheme desert
-highlight LineNr ctermfg=darkyellow
+autocmd ColorScheme * highlight LineNr ctermfg=darkyellow
+colorscheme hybrid
 syntax on
 
 set background=dark
@@ -61,7 +61,7 @@ command! C call s:C()
 nmap <F5> :C<CR>
 function! s:C()
     :w
-    :!g++ --std=c++11 -O2 -Wall % -o X
+    :!g++ --std=c++11 -O2 -Wall % -o x
 :endfunction
 "---------------------------------------------------------------------------
 
