@@ -63,12 +63,13 @@ function! s:C()
     :w
     :!g++ --std=c++11 -O2 -Wall % -o x
 :endfunction
-"---------------------------------------------------------------------------
+""""""""""""""""""""""""""""""
+" md as markdown, instead of modula2
+autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
+""""""""""""""""""""""""""""""
 " http://inari.hatenablog.com/entry/2014/05/05/231307
-""""""""""""""""""""""""""""""
 " 全角スペースの表示
-""""""""""""""""""""""""""""""
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 endfunction
@@ -81,12 +82,10 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
-""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
-""""""""""""""""""""""""""""""
 " 挿入モード時、ステータスラインの色を変更
-""""""""""""""""""""""""""""""
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
 if has('syntax')
@@ -117,3 +116,4 @@ function! s:GetHighlight(hi)
     return hl
 endfunction
 """"""""""""""""""""""""""""""
+
