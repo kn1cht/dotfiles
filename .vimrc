@@ -13,12 +13,12 @@ set autoindent
 set expandtab
 set list
 set listchars=tab:>\ ,trail:-,extends:>
-set shiftwidth=4
+set shiftwidth=2
 set showmatch
 set smartcase
 set smartindent
 set smarttab
-set tabstop=4
+set tabstop=2
 set whichwrap=b,s,h,l,<,>,[,]
 autocmd BufWritePre * :%s/\s\+$//ge
 autocmd BufWritePre * :%s/\t/  /ge
