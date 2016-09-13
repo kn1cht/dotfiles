@@ -66,8 +66,6 @@ function! s:C()
 """"""""""""""""""""""""""""""
 " md as markdown, instead of modula2
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-" json as javascript
-autocmd BufNewFile,BufRead *.{json} set filetype=javascript
 
 """"""""""""""""""""""""""""""
 " http://inari.hatenablog.com/entry/2014/05/05/231307
