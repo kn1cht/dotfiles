@@ -68,6 +68,8 @@ function! s:C()
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 " json as javascript
 autocmd BufNewFile,BufRead *.{json} set filetype=javascript
+" javascript as jquery
+autocmd BufNewFile,BufRead *.{js} set filetype=jquery
 
 """"""""""""""""""""""""""""""
 " http://inari.hatenablog.com/entry/2014/05/05/231307
