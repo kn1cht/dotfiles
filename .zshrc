@@ -29,7 +29,6 @@ setopt extended_glob
 
 alias vv="g++ --std=c++11 -O2 -Wall"
 alias ls='ls -Ga'
-alias sl='ls'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
 # C で標準出力をクリップボードにコピーする
@@ -41,3 +40,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:"/Applications/microchip/xc8/v1.35/bin""
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 export PATH="$PATH":/Users/RYK6U0327/isrb2
+eval "$(rbenv init -)"
