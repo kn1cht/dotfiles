@@ -1,7 +1,6 @@
 autocmd ColorScheme * highlight LineNr ctermfg=darkyellow
 colorscheme hybrid
 syntax on
-
 set background=dark
 set hlsearch
 set laststatus=2
@@ -120,4 +119,78 @@ function! s:GetHighlight(hi)
     return hl
 endfunction
 """"""""""""""""""""""""""""""
+" Neobundle Settings
+""""""""""""""""""""""""""""""
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'davidhalter/jedi-vim'
+
+call neobundle#end()
+filetype plugin indent on
+NeoBundleCheck
+""""""""""""""""""""""""""""""
+" Neocomplete Settings
+""""""""""""""""""""""""""""""
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_underbar_completion = 1
+let g:neocomplete#enable_camel_case_completion  =  1
+let g:neocomplete#max_list = 20
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#auto_completion_start_length = 2
+let g:neocomplete#enable_auto_close_preview = 0
+autocmd InsertLeave * silent! pclose!
+let g:neocomplete#max_keyword_width = 10000
+if !exists('g:neocomplete#delimiter_patterns')
+  let g:neocomplete#delimiter_patterns= {}
+endif
+let g:neocomplete#delimiter_patterns.ruby = ['::']
+if !exists('g:neocomplete#same_filetypes')
+  let g:neocomplete#same_filetypes = {}
+endif
+let g:neocomplete#same_filetypes.ruby = 'eruby'
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.typescript = '[^. \t]\.\%(\h\w*\)\?' " Same as JavaScript
+let g:neocomplete#force_omni_input_patterns.go = '[^. \t]\.\%(\h\w*\)\?'         " Same as JavaScript
+let s:neco_dicts_dir = $HOME . '/dicts'
+if isdirectory(s:neco_dicts_dir)
+  let g:neocomplete#sources#dictionary#dictionaries = {
+  \   'ruby': s:neco_dicts_dir . '/ruby.dict',
+  \   'javascript': s:neco_dicts_dir . '/jquery.dict',
+  \ }
+endif
+let g:neocomplete#data_directory = $HOME . '/.vim/cache/neocomplete'
+call neocomplete#custom#source('look', 'min_pattern_length', 1)
+call neobundle#untap()
+""""""""""""""""""""""""""""""
+" NERDTree Settings
+""""""""""""""""""""""""""""""
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-t> :NERDTreeToggle<CR>
+
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+call NERDTreeHighlightFile('py',     'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('md',     'blue',    'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml',    'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('config', 'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('conf',   'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('json',   'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('html',   'yellow',  'none', 'yellow',  '#151515')
+call NERDTreeHighlightFile('styl',   'cyan',    'none', 'cyan',    '#151515')
+call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan',    '#151515')
+call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
+call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
 
