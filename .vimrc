@@ -19,6 +19,7 @@ set smartindent
 set smarttab
 set tabstop=2
 set whichwrap=b,s,h,l,<,>,[,]
+set backspace=indent,eol,start
 autocmd BufWritePre * :%s/\s\+$//ge
 autocmd BufWritePre * :%s/\t/  /ge
 
@@ -69,6 +70,8 @@ autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd BufNewFile,BufRead *.{json} set filetype=javascript
 " javascript as jquery
 autocmd BufNewFile,BufRead *.{js} set filetype=jquery
+" ino as cpp
+autocmd BufNewFile,BufRead *.{ino} set filetype=cpp
 
 """"""""""""""""""""""""""""""
 " http://inari.hatenablog.com/entry/2014/05/05/231307

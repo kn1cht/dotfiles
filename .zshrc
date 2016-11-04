@@ -28,6 +28,7 @@ setopt hist_reduce_blanks
 setopt extended_glob
 
 alias vv="g++ --std=c++11 -O2 -Wall"
+alias vi="vim"
 alias ls='ls -Ga'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
