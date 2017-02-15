@@ -131,6 +131,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'mbbill/undotree'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'davidhalter/jedi-vim'
 
@@ -196,4 +197,18 @@ call NERDTreeHighlightFile('styl',   'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
-
+""""""""""""""""""""""""""""""
+" undotree Settings
+" [?]でヘルプ。[¥],[u]でundo履歴
+" http://vimblog.com/blog/2012/09/02/undotree-dot-vim-display-your-undo-history-in-a-graph/
+" https://github.com/r1chelt/dotfiles/blob/master/.vimrc
+""""""""""""""""""""""""""""""
+nmap <Leader>u :UndotreeToggle<CR>
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_SplitWidth = 35
+let g:undotree_diffAutoOpen = 1
+let g:undotree_diffpanelHeight = 25
+let g:undotree_RelativeTimestamp = 1
+let g:undotree_TreeNodeShape = '*'
+let g:undotree_HighlightChangedText = 1
+let g:undotree_HighlightSyntax = "UnderLined"

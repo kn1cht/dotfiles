@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # プロンプト
@@ -32,11 +32,12 @@ alias vi="vim"
 alias ls='ls -Ga'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
+alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 alias -g C='| pbcopy'
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:"/Applications/microchip/xc8/v1.35/bin""
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
