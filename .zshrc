@@ -33,13 +33,17 @@ alias ls='ls -Ga'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
+alias md2pdf='pandoc -f markdown -V documentclass=ltjarticle -V geometry:margin=1in --latex-engine=lualatex'
+alias md2pdf-ref='pandoc -f markdown -V documentclass=ltjarticle -V geometry:margin=1in --latex-engine=lualatex --filter pandoc-crossref'
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 alias -g C='| pbcopy'
 
 export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$PATH:"/Applications/microchip/xc8/v1.35/bin""
-export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
-export PATH="$PATH":/Users/RYK6U0327/isrb2
+export PATH=$HOME/.rbenv/bin:~/Library/Python/2.7/bin:~/.go/bin:$PATH
+export PATH=/Applications/microchip/xc8/v1.35/bin:$PATH
+export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
+export PATH=/Users/RYK6U0327/isrb2:$PATH
+export GOPATH=$HOME/.go/
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 eval "$(rbenv init -)"

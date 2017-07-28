@@ -21,7 +21,7 @@ set tabstop=2
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
 autocmd BufWritePre * :%s/\s\+$//ge
-autocmd BufWritePre * :%s/\t/  /ge
+"autocmd BufWritePre * :%s/\t/  /ge
 
 "---------------------------------------------------------------------------
 " history
@@ -62,6 +62,14 @@ nmap <F5> :C<CR>
 function! s:C()
     :w
     :!g++ --std=c++11 -O2 -Wall % -o x
+:endfunction
+
+" F6キーでmake
+command! Make call s:Make()
+nmap <F6> :Make<CR>
+function! s:Make()
+    :w
+    :!make
 :endfunction
 """"""""""""""""""""""""""""""
 " md as markdown, instead of modula2
