@@ -61,7 +61,7 @@ command! C call s:C()
 nmap <F5> :C<CR>
 function! s:C()
     :w
-    :!g++ --std=c++11 -O2 -Wall % -o x
+    :!g++ --std=c++14 -O2 -Wall % -o x
 :endfunction
 
 " F6キーでmake

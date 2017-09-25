@@ -40,10 +40,10 @@ alias md2pdf-ref='pandoc -f markdown -V documentclass=ltjarticle -V geometry:mar
 alias -g C='| pbcopy'
 
 export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
+export GOPATH=$HOME/.go/
 export PATH=$HOME/.rbenv/bin:~/Library/Python/2.7/bin:~/.go/bin:$PATH
 export PATH=/Applications/microchip/xc8/v1.35/bin:$PATH
 export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
-export PATH=/Users/RYK6U0327/isrb2:$PATH
-export GOPATH=$HOME/.go/
+export PATH=$HOME/isrb2:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 eval "$(rbenv init -)"

@@ -1,10 +1,11 @@
 #!/bin/bash
 
-cd `dirname $0`
+cd dirname $0
+ABSDIR=`pwd`
 
-DOT_FILES=(.bashrc .bash_profile .vimrc .zshrc)
+DOT_FILES=(.bashrc .vimrc .zshrc)
 
 for file in ${DOT_FILES[@]}
 do
-    ln -s ./$file $HOME/$file
+    ln -s $ABSDIR/$file $HOME/$file
 done
