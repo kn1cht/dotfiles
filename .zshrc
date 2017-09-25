@@ -30,6 +30,7 @@ setopt extended_glob
 alias vv="g++ --std=c++11 -O2 -Wall"
 alias vi="vim"
 alias ls='ls -Ga'
+alias grep='grep -E --color=auto'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
