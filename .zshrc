@@ -35,8 +35,9 @@ alias mkdir='mkdir -p'
 alias sudo='sudo '
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 
-funciton md2pdf (){ pandoc -f markdown -V documentclass=ltjarticle -V geometry:margin=1in --latex-engine=lualatex $1 -o ${1%.*}.pdf }
-funciton md2pdf-ref (){ pandoc -f markdown -V documentclass=ltjarticle -V geometry:margin=1in --latex-engine=lualatex --filter pandoc-crossref $1 -o ${1%.*}.pdf }
+funciton md2pdf (){ pandoc -f markdown -V documentclass=ltjarticle -V geometry:margin=1in --latex-engine=lualatex $@ -o ${1%.*}.pdf }
+
+funciton md2pdf-ref (){ pandoc -f markdown -V documentclass=ltjarticle -V geometry:margin=1in --latex-engine=lualatex --filter pandoc-crossref $@ -o ${1%.*}.pdf }
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1

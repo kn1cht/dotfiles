@@ -40,6 +40,12 @@ endif
 set backupdir^=~/.vim/backup/
 set undodir^=~/.vim/undo/
 
+inoremap jj <Esc>
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+
+" ~/.vimrcをF1で開く
+nnoremap <silent> <F1> :<C-u>e ~/.vimrc<CR>
+
 " 表示行単位で上下移動するように
 nnoremap j gj
 nnoremap k gk
@@ -61,7 +67,7 @@ command! C call s:C()
 nmap <F5> :C<CR>
 function! s:C()
     :w
-    :!g++ --std=c++14 -O2 -Wall % -o x
+    :!g++ --std=c++14 -O2 -Wall % -o %:r
 :endfunction
 
 " F6キーでmake
@@ -220,3 +226,6 @@ let g:undotree_RelativeTimestamp = 1
 let g:undotree_TreeNodeShape = '*'
 let g:undotree_HighlightChangedText = 1
 let g:undotree_HighlightSyntax = "UnderLined"
+
+""""""""""""""""""""""""""""""
+set secure
