@@ -35,6 +35,13 @@ alias mkdir='mkdir -p'
 alias sudo='sudo '
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
 
+if [ "$(uname)" = 'Darwin' ]; then
+  export LSCOLORS=xbfxcxdxbxegedabagacad
+  alias ls='ls -G'
+else
+  alias ls='ls --color=auto'
+fi
+
 funciton md2pdf (){ pandoc -f markdown -V documentclass=ltjarticle -V geometry:margin=1in --latex-engine=lualatex $@ -o ${1%.*}.pdf }
 
 funciton md2pdf-ref (){ pandoc -f markdown -V documentclass=ltjarticle -V geometry:margin=1in --latex-engine=lualatex --filter pandoc-crossref $@ -o ${1%.*}.pdf }
@@ -51,3 +58,4 @@ export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
 export PATH=$HOME/isrb2:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 eval "$(rbenv init -)"
+export LC_COLLATE="C"
