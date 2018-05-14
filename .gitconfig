@@ -1,6 +1,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   whitespace = cr-at-eol
+	autocrlf = false
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
@@ -38,4 +39,5 @@
   st  = status
   ad  = add
   c   = commit
+  ch  = checkout
   l = log --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
