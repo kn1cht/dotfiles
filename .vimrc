@@ -20,6 +20,8 @@ set smarttab
 set tabstop=2
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 autocmd BufWritePre * :%s/\s\+$//ge
 "autocmd BufWritePre * :%s/\t/  /ge
 
