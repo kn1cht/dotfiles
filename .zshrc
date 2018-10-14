@@ -34,6 +34,8 @@ alias grep='grep -E --color=auto'
 alias mkdir='mkdir -p'
 alias sudo='sudo '
 alias rot13='tr A-Za-z N-ZA-Mn-za-m'
+alias g='cd $(ghq root)/$(ghq list | peco)'
+alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 if [ "$(uname)" = 'Darwin' ]; then
   export LSCOLORS=xbfxcxdxbxegedabagacad
@@ -56,6 +58,9 @@ export PATH=$HOME/.rbenv/bin:~/Library/Python/2.7/bin:~/.go/bin:$PATH
 export PATH=/Applications/microchip/xc8/v1.35/bin:$PATH
 export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
 export PATH=$HOME/isrb2:$PATH
+export PATH=${HOME}/perl5/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-eval "$(rbenv init -)"
+eval "$(anyenv init -)"
+eval $(docker-machine env default)
 export LC_COLLATE="C"
+

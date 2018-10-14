@@ -145,11 +145,9 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'scrooloose/nerdtree'
+NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'mbbill/undotree'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
 filetype plugin indent on
