@@ -52,15 +52,16 @@ funciton md2pdf-ref (){ pandoc -f markdown -V documentclass=ltjarticle -V geomet
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 alias -g C='| pbcopy'
 
+export LC_All="ja_JP.UTF-8"
+export LC_COLLATE="C"
+export LANG=ja_JP.UTF-8
+export LESSCHARSET=utf-8
+
 export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
 export GOPATH=$HOME/.go/
 export PATH=$HOME/.rbenv/bin:~/Library/Python/2.7/bin:~/.go/bin:$PATH
-export PATH=/Applications/microchip/xc8/v1.35/bin:$PATH
 export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
-export PATH=$HOME/isrb2:$PATH
 export PATH=${HOME}/perl5/bin:$PATH
+export PATH=${HOME}/.anyenv/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 eval "$(anyenv init -)"
-eval $(docker-machine env default)
-export LC_COLLATE="C"
-
