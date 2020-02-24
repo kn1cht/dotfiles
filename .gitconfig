@@ -5,13 +5,13 @@
   pager = LESSCHARSET=utf-8 less
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
   name = kn1cht
-  email = ito.turukasiwa@gmail.com
+	email = 16277200+kn1cht@users.noreply.github.com
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f
@@ -42,3 +42,5 @@
   c   = commit
   ch  = checkout
   l = log --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
+[ghq "ssh://git@bitbucket.org/"]
+  vcs = git
