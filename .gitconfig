@@ -35,6 +35,7 @@
   branch = auto
   interactive = auto
   grep = auto
+	ui = true
 [alias]
   s   = status
   st  = status

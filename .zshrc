@@ -97,7 +97,6 @@ export GOPATH=$HOME/.go/
 export PATH=$HOME/.rbenv/bin:~/Library/Python/2.7/bin:~/.go/bin:$PATH
 export PATH=$HOME/perl5/bin:$PATH
 export PATH=$HOME/.anyenv/bin:$PATH
+export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 eval "$(anyenv init -)"
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
