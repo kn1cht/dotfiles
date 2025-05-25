@@ -27,6 +27,9 @@ setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt extended_glob
 
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 alias vv="g++ --std=c++11 -O2 -Wall"
 alias vi="vim"
 alias ls='ls -Ga'
@@ -92,11 +95,4 @@ funciton md2pdf-ref (){ pandoc -f markdown -V documentclass=ltjarticle -V geomet
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 
-export PATH=/opt/local/bin:/opt/local/sbin:~/bin:$PATH
-export GOPATH=$HOME/.go/
-export PATH=$HOME/.rbenv/bin:~/Library/Python/2.7/bin:~/.go/bin:$PATH
-export PATH=$HOME/perl5/bin:$PATH
-export PATH=$HOME/.anyenv/bin:$PATH
-export PATH="$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight"
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 eval "$(anyenv init -)"
